@@ -19,5 +19,5 @@ fn main() -> std::io::Result<()> {
                 fs::write(the_actual_file, vec![OVERWRITE_DATA; file_size]).expect("Something went wrong while over-writing the file!");
             }
         }
-        Ok(())
+    Ok(())
 }
